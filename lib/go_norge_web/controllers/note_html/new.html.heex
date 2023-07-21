@@ -1,0 +1,10 @@
+<div class="container">
+  <.header>
+    Nouvelle note
+    <:subtitle>Enregistrez une nouvelle note.</:subtitle>
+  </.header>
+  
+  <.note_form changeset={@changeset} action={~p"/notes"} />
+  
+  <.back navigate={~p"/notes"} class="btn btn-secondary">Retour</.back>
+</div>

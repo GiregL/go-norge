@@ -1,0 +1,10 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Une erreur est survenue!
+  </.error>
+  <.input field={f[:title]} type="text" label="Titre" class="input-control"/>
+  <.input field={f[:content]} type="textarea" label="Contenu" class="input-control"/>
+  <:actions>
+    <.button>Sauvegarder</.button>
+  </:actions>
+</.simple_form>

@@ -18,6 +18,8 @@ defmodule GoNorgeWeb.Router do
     get "/login", AuthController, :show_login
     post "/login", AuthController, :process_login
     get "/logout", AuthController, :logout
+
+    resources "/notes", NoteController
   end
 
   # Enable LiveDashboard in development

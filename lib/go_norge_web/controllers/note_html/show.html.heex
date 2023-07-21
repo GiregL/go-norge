@@ -1,0 +1,17 @@
+<div class="container">
+  <.header>
+    Note <%= @note.id %>
+    <:actions>
+      <.link href={~p"/notes/#{@note}/edit"}>
+        <.button>Editer</.button>
+      </.link>
+    </:actions>
+  </.header>
+  
+  <.list>
+    <:item title="Titre"><%= @note.title %></:item>
+    <:item title="Contenu"><%= @note.content %></:item>
+  </.list>
+  
+  <.back navigate={~p"/notes"}>Retour</.back>
+</div>

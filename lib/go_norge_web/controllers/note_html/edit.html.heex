@@ -1,0 +1,7 @@
+<.header>
+  Editer la note <%= @note.id %>
+</.header>
+
+<.note_form changeset={@changeset} action={~p"/notes/#{@note}"} />
+
+<.back navigate={~p"/notes"}>Retour</.back>

@@ -1,0 +1,34 @@
+<div class="container">
+  <.header>
+    Liste de vos notes
+    <:actions>
+      <.link href={~p"/notes/new"}>
+        <.button class="btn btn-primary">Nouvelle note</.button>
+      </.link>
+    </:actions>
+  </.header>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Titre</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= for note <- @notes do %>
+        <tr>
+          <td><%= note.title %></td>
+          <td>
+            <.link navigate={~p"/notes/#{note}"} class="btn btn-primary">Afficher</.link>
+            <.link navigate={~p"/notes/#{note}/edit"} class="btn btn-secondary">Editer</.link>
+            <.link href={~p"/notes/#{note}"} class="btn btn-danger" method="delete" data-confirm="Êtes-vous sûr de vouloir supprimer cette note?">
+              Supprimer
+            </.link>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
